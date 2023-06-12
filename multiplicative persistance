@@ -1,0 +1,23 @@
+def calculate_persistence(number):
+    persistence = 0
+
+    while number >= 10:
+        product = 1
+        for digit in str(number):
+            product *= int(digit)
+        number = product
+        persistence += 1
+
+    return persistence
+
+target_persistence = 12
+number = 0
+
+while True:
+    number += 1
+    persistence = calculate_persistence(number)
+    
+    if persistence == target_persistence:
+        break
+
+print("Number with multiplicative persistence of 12:", number)
