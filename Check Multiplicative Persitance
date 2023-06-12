@@ -1,0 +1,16 @@
+def calculate_persistence(number):
+    persistence = 0
+
+    while number >= 10:
+        product = 1
+        for digit in str(number):
+            product *= int(digit)
+        number = product
+        persistence += 1
+
+    return persistence
+
+# Test the function
+number = int(input("Enter a number: "))
+persistence = calculate_persistence(number)
+print("Multiplicative Persistence:", persistence)
